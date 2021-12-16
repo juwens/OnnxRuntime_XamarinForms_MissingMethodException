@@ -17,13 +17,21 @@ namespace OnnxXF
             InitializeComponent();
 
             PrintLoadedTypes();
+            PrintDenseTensorInfos();
 
-            Debug.WriteLine("type from c# direct usage: " + typeof(System.Memory<>).AssemblyQualifiedName);
+            Debug.WriteLine("System.Memory        type from C#: " + typeof(System.Memory<>).AssemblyQualifiedName);
 
             MyLib.Class1.PrintMemoryVersion();
             MyLib.Class1.TestDenseTensor();
 
             System.Console.WriteLine("success");
+        }
+
+        private void PrintDenseTensorInfos()
+        {
+            var type = typeof(Microsoft.ML.OnnxRuntime.Tensors.DenseTensor<>);
+            var bufferProp = type.GetProperty("Buffer");
+            Debug.WriteLine("DenseTensor<>.Buffer type from C#: " + bufferProp.PropertyType.AssemblyQualifiedName);
         }
 
         private static void PrintLoadedTypes()
