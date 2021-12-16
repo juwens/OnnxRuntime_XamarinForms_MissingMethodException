@@ -6,8 +6,10 @@
 
   <ItemGroup>
     <None Remove="Microsoft.ML.OnnxRuntime" />
+    <None Remove="Microsoft.ML.OnnxTransformer" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.10.0" />
+    <PackageReference Include="Microsoft.ML.OnnxTransformer" Version="1.7.0" />
   </ItemGroup>
 </Project>
