@@ -13,6 +13,11 @@ namespace OnnxXF
         public MainPage()
         {
             InitializeComponent();
+
+            MyLib.Class1.PrintMemoryVersion();
+            MyLib.Class1.TestDenseTensor();
+
+            System.Console.WriteLine("success");
         }
     }
 }
